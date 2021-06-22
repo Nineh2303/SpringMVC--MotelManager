@@ -4,6 +4,11 @@
 <head>
     <%@include file="../commons/tag/header.jsp" %>
     <meta charset="UTF-8">
+    <style>
+        .name  {
+            margin-left:40px;
+        }
+    </style>
 </head>
 <body class="archive post-type-archive post-type-archive-product woocommerce woocommerce-page">
 <div id="page">
@@ -13,6 +18,21 @@
             <div id="primary" class="content-area column full">
                 <main id="main" class="site-main">
                     <div class="grid portfoliogrid">
+
+                        <article class="hentry">
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <a href="${pageContext.request.contextPath}/home/index.htm "><img
+                                            src="${pageContext.request.contextPath}/resources/image/room.png"
+                                            style="width : 50%;"
+                                            class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                            alt="p1"/></a>
+                                </div>
+                                <h2 class="entry-title"><a href="${pageContext.request.contextPath}/home/index.htm"
+                                                           rel="bookmark"><span class="name">&nbsp;Nhà trọ</span>
+                                    </a></h2>
+                            </header>
+                        </article>
 
                         <article class="hentry">
                             <header class="entry-header">
@@ -28,7 +48,6 @@
                                     Trọ</a></h2>
                             </header>
                         </article>
-
                         <article class="hentry">
                             <header class="entry-header">
                                 <div class="entry-thumbnail">

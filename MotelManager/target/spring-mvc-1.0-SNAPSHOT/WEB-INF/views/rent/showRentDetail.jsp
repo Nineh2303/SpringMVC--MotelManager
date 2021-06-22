@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
@@ -39,7 +40,7 @@
         }
 
         .info-group {
-            text-align: center;
+            margin-left: 50px;
         }
     </style>
 </head>
@@ -53,10 +54,16 @@
 
         <div class="info-group">
             <span class="amount"><h3>Mã phiếu thuê : ${rent.rentID}</h3> </span>
-            <span class="amount">Nggười thuê : ${rent.tenant.name}</span> <br/>
+            <span class="amount">Người thuê : ${rent.tenant.name}</span> <br/>
             <span class="amount">Số Chứng Minh Nhân Dân :${rent.tenant.CMND}</span> <br/>
-            <span class="amount"> Ngày thuê phòng : ${rent.checkInDate}</span><br/>
-            <span class="amount"> Ngày trả phòng : ${rent.checkOutDate}</span><br/>
+            <span class="amount"> Ngày thuê phòng :  <fmt:formatDate pattern="dd-MM-yyyy" value="${rent.checkInDate}"/></span><br/>
+            <span class="amount"> Ngày trả phòng : <c:choose>
+                        <c:when test="${rent.checkOutDate == null}"> Đang thuê</c:when>
+                        <c:otherwise>
+                            <fmt:formatDate pattern="dd-MM-yyyy" value="${rent.checkOutDate}"/>
+                        </c:otherwise>
+            </c:choose>
+            </span><br/>
         </div>
         <span class="message">
                                 <c:if test="${rent.checkOutDate != null}">

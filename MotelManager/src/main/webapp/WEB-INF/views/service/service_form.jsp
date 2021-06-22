@@ -54,19 +54,19 @@
         <label class="fail-message">${fmessage}</label>
         <div class="form-wrapper">
             <label class="label-title">Mã dịch vụ</label>
-            <form:input type="text" class="form-control" path="serviceId"/>
+            <form:input type="text" class="form-control" path="serviceId" required="text"/>
         </div>
         <div class="form-wrapper">
             <label class="label-title">Tên dịch vụ</label>
-            <form:input type="text" class="form-control" path="name" />
+            <form:input type="text" class="form-control" path="name"  required="text" />
         </div>
         <div class="form-wrapper">
             <label class="label-title">Giá</label>
-            <form:input type="text" class="form-control" path="price"/>
+            <form:input type="number" class="form-control" path="price"  required="number" min ="0"/>
         </div>
         <div class="form-wrapper">
             <label class="label-title">Đơn vị tinh</label>
-            <form:input type="text" class="form-control" path="countIndex"/>
+            <form:input type="text" class="form-control" path="countIndex"  required="text"/>
         </div>
 
         <button>Thêm</button>

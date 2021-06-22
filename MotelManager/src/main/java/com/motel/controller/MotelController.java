@@ -68,11 +68,11 @@ public class MotelController {
         }
         boolean check = homeService.updateHome(home) ;
         if (check) {
-            model.addAttribute("update_message", "Cập nhật thành công!");
+            model.addAttribute("message", "Cập nhật thành công!");
             List<Home> listhome = homeService.getAllHome(offset,maxResult) ;
             model.addAttribute("home", listhome) ;
         } else {
-            model.addAttribute("update_message", "Cập nhật thất bại!");
+            model.addAttribute("fmessage", "Cập nhật thất bại!");
             List<Home> listhome = homeService.getAllHome(offset,maxResult) ;
             model.addAttribute("home", listhome) ;
         }

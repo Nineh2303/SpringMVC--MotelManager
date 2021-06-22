@@ -25,18 +25,21 @@
             text-align: center;
             font-family: "JetBrains Mono", 'Bold';
         }
-        .success-message{
+
+        .success-message {
             font-family: "JetBrains Mono", 'Bold';
             font-size: 20px;
-            color : blue;
+            color: blue;
         }
-        .fail-message{
+
+        .fail-message {
             font-family: "JetBrains Mono", 'Bold';
             font-size: 20px;
             color: red;
         }
+
         .label-title {
-            font-size:  20px;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -44,27 +47,28 @@
 <%@include file="../../commons/header.jsp" %>
 <div class="container">
     <h2 class="title">Thêm phòng trọ</h2>
-    <form:form  class="form"  action="${pageContext.request.contextPath}/motel/insert.htm"
-                modelAttribute="insertHome">
+    <form:form class="form" action="${pageContext.request.contextPath}/motel/insert.htm"
+               modelAttribute="insertHome">
         <label class="success-message"> ${success_message}</label>
         <label class="fail-message"> ${fail_message}</label>
         <div class="form-wrapper">
             <label class="label-title">Mã nhà trọ</label>
-            <form:input type="text" class="form-control" path="homeId"/>
-        </div>
-        <div class="form-wrapper" >
-            <label class="label-title"> Tên chủ trọ </label>
-            <form:input type="text" class="form-control" path="motelBossName"/>
+            <form:input type="text" class="form-control" path="homeId" required="text"/>
         </div>
         <div class="form-wrapper">
-            <label class="label-title" >Số điện thoại</label>
-            <form:input type="text" class="form-control"  path="numberPhone"/>
+            <label class="label-title"> Tên chủ trọ </label>
+            <form:input type="text" class="form-control" path="motelBossName" required="text"/>
+        </div>
+        <div class="form-wrapper">
+            <label class="label-title">Số điện thoại</label>
+            <form:input type="text" class="form-control" path="numberPhone" required="text" pattern="[0-9]{10}"
+                        title="Số điện thoại chỉ gồm 10 chữ số, không chứa chữ cái và ký tự đặc biệt"/>
         </div>
         <div class="form-wrapper">
             <label class="label-title">Địa chỉ</label>
-            <form:input type="text" class="form-control" path="address"/>
+            <form:input type="text" class="form-control" path="address" required="text"/>
         </div>
-        <button> Thêm nhà trọ </button>
+        <button> Thêm nhà trọ</button>
     </form:form>
 
 </div>

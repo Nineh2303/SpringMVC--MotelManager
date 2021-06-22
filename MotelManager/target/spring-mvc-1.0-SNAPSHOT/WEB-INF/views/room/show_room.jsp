@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
 <html>
 <head>
     <title>Title</title>
@@ -42,7 +43,7 @@
                                 <p class="price">
                                     <span class="description">Số lượng tối đa :${room.max}</span> <br/>
                                     <span class="description">Số người đang ở :${currentQuantity}</span> <br/>
-                                    <span class="description">Giá phòng :${room.price}</span>
+                                    <span class="description">Giá phòng :<fmt:formatNumber pattern="#,###,###,###" value="${room.price}"/></span>
                                     <br/><span class="description">
                                     Trạng thái:
                                      <c:choose>

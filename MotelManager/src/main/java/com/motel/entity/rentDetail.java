@@ -23,6 +23,8 @@ public class rentDetail {
     private Date checkOutDate;
     @Column(name = "GhiChu")
     private String note;
+    @Column(name="TrangThai")
+    private int status;
 
     @ManyToOne
     @JoinColumn(name="MaHD")
@@ -45,6 +47,14 @@ public class rentDetail {
 
     public void setCheckInDate(Date checkInDate) {
         this.checkInDate = checkInDate;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public Date getCheckOutDate() {
@@ -79,12 +89,12 @@ public class rentDetail {
         this.tenant = tenant;
     }
 
-
-    public rentDetail(String rentID, Date checkInDate, Date checkOutDate, String note, Contract contract, Tenant tenant) {
+    public rentDetail(String rentID, Date checkInDate, Date checkOutDate, String note, int status, Contract contract, Tenant tenant) {
         this.rentID = rentID;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.note = note;
+        this.status = status;
         this.contract = contract;
         this.tenant = tenant;
     }

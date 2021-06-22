@@ -264,6 +264,7 @@ public class RoomController {
             rent.setTenant(tenant);
             rent.setContract(newContract);
             rent.setCheckInDate(checkIn);
+            rent.setStatus(1);
 
             try {
                 session.save(rent);
@@ -282,6 +283,7 @@ public class RoomController {
             rent.setTenant(tenant);
             rent.setContract(contract);
             rent.setCheckInDate(checkIn);
+            rent.setStatus(1);
             try {
                 session.save(rent);
                 t.commit();

@@ -64,20 +64,20 @@
             </div>
             <div class="form-wrapper">
                 <label>Tên phòng</label>
-                <input type="text" class="form-control" name="name" value="${room.name}"/>
+                <input type="text" class="form-control" name="name" value="${room.name}" required/>
             </div>
             <div class="form-wrapper">
                 <label>Giá phòng</label>
-                <input type="text" class="form-control" name="price" value="${room.price}"/>
+                <input type="number" class="form-control" name="price" value="${room.price}" required min="0"/>
             </div>
             <div class="form-wrapper">
                 <label>Số lượng tối đa</label>
-                <input type="text" class="form-control" name="max" value="${room.max}"/>
+                <input type="number" class="form-control" name="max" value="${room.max}" required min="0"/>
             </div>
             <div class="form-wrapper">
                 Trạng thái
                 <select name="status" class="form-control">
-                    <option value="${room.status}" selected="selected">
+                    <option value="${room.status}" selected disabled hidden>
                         <c:choose>
                             <c:when test="${room.status==0}"> Còn trống </c:when>
                             <c:when test="${room.status==-1}"> Đang sửa chữa </c:when>

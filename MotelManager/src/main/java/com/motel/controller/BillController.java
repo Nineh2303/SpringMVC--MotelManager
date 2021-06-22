@@ -119,7 +119,7 @@ public class BillController {
             String attr = ser.getServiceId();
             String value = request.getParameter(attr); //
             float val = Float.parseFloat(value);
-            if (val != 0) {
+            if (val >0) {
                 float price = val * ser.getPrice();
                 total += price;
                 BillDetail billD = new BillDetail();

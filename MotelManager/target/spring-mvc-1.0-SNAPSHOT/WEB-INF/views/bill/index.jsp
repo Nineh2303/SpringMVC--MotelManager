@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
@@ -56,7 +56,7 @@
                             <tr>
                                 <th> ${m.billId}</th>
                                 <th> ${m.contract.roomId}</th>
-                                <th> ${m.date}</th>
+                                <th>  <fmt:formatDate pattern="dd-MM-yyyy" value="${m.date}"/></th>
                                 <th><fmt:formatNumber pattern="#,###,###,###" value="${m.money}"/> VNĐ</th>
                                 <th><a href="${pageContext.request.contextPath}/bill/bill-detail/${m.billId}.htm">
                                     <button class="button-small"> Chi tiết</button>

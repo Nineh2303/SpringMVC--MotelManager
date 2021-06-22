@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
@@ -47,7 +48,7 @@
                                     <h1 itemprop="name" class="product_title entry-title">Thông tin cá nhân</h1>
                                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                                         <h3><span class="description">Họ và tên: ${tenant.name}</span></h3>
-                                        <span class="description">Ngày sinh: ${tenant.birthDay}</span> <br/>
+                                        <span class="description">Ngày sinh: <fmt:formatDate pattern="dd-MM-yyyy" value="${tenant.birthDay}" /></span> <br/>
                                         <span class="description">Số điện thoại: ${tenant.numberPhone}</span><br/>
                                         <span class="description">Số chứng minh nhân dân : ${tenant.CMND}</span><br/>
                                         <span class="description">Địa chỉ : ${tenant.address}</span><br/>

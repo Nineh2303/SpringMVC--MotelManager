@@ -30,8 +30,7 @@
                         <tr>
                             <th>Mã phiếu thuê</th>
                             <th>Số CMND</th>
-                            <th>Tên khách trọ</th>
-                            <th> Mã hợp đồng</th>
+                            <th>Tên khách trọ</th>>
                             <th></th>
                         </tr>
                         <c:forEach var="m" items="${rent}">
@@ -45,7 +44,6 @@
                                     <a href="${pageContext.request.contextPath}/tenant/show_tenant/${m.tenant.CMND}.htm">
                                             ${m.tenant.name}
                                 </th>
-                                <th> ${m.contract.contractId}</th>
                                 <th>
                                     <div class="button-group"><a
                                             href="${pageContext.request.contextPath}/rent_detail/show/rent-id=${m.rentID}.htm">

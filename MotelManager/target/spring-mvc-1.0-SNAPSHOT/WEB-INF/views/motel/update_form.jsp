@@ -57,15 +57,18 @@
             </div>
             <div class="form-wrapper">
                 <label class="label-title"> Tên chủ trọ </label>
-                <input type="text" class="form-control" name="motelBossName" value="${home.motelBossName}"/>
+                <input type="text" class="form-control" name="motelBossName" value="${home.motelBossName}" required/>
             </div>
             <div class="form-wrapper">
                 <label class="label-title">Số điện thoại</label>
-                <input type="text" class="form-control" name="numberPhone" value="${home.numberPhone}"/>
+                <input type="text" class="form-control" name="numberPhone" value="${home.numberPhone}"
+                       required="text" pattern="[0-9]{10}"
+                       title="Số điện thoại chỉ gồm 10 chữ số, không chứa chữ cái và ký tự đặc biệt"
+                />
             </div>
             <div class="form-wrapper">
                 <label class="label-title">Địa chỉ</label>
-                <input type="text" class="form-control" name="address" value="${home.address}"/>
+                <input type="text" class="form-control" name="address" value="${home.address}" required/>
             </div>
             <button>Cập nhật</button>
         </form>

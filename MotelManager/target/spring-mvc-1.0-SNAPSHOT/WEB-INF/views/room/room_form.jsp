@@ -45,7 +45,7 @@
         <div class="form-group">
             <div class="form-wrapper">
                 <label>Mã phòng trọ</label>
-                <form:input type="text" class="form-control" path="roomId"/>
+                <form:input type="text" class="form-control" path="roomId" required="text"/>
             </div>
             <div class="form-wrapper">
                 <label>Thuộc nhà trọ</label>
@@ -58,15 +58,15 @@
         </div>
         <div class="form-wrapper">
             <label>Tên phòng</label>
-            <form:input type="text" class="form-control" path="name"/>
+            <form:input type="text" class="form-control" path="name" required="text"/>
         </div>
         <div class="form-wrapper">
             <label>Giá phòng</label>
-            <form:input type="text" class="form-control" path="price"/>
+            <form:input type="number" class="form-control" path="price" required="number" min ="0"/>
         </div>
         <div class="form-wrapper">
             <label>Số lượng tối đa</label>
-            <form:input type="text" class="form-control" path="max"/>
+            <form:input type="number" class="form-control" path="max"  required="number" min ="0"/>
         </div>
         <div class="form-wrapper">
             <label>Trạng thái</label>

@@ -54,27 +54,28 @@
             </div>
             <div class="form-wrapper">
                 <label >Họ và tên</label>
-                <input type="text" class="form-control" maxlength="100" name="name" value ="${tenant.name}">
+                <input type="text" class="form-control" maxlength="100" name="name" value ="${tenant.name}" required>
             </div>
             <div class="form-wrapper">
                 <label >Ngày sinh</label>
-                <input type="date" class="form-control" name="birthDay" value="${tenant.birthDay}">
+                <input type="date" class="form-control" name="birthDay" value="${tenant.birthDay}" required>
             </div>
             <div class="form-wrapper">
                 <label>Giới tinh </label>
-                <select name="gender" value="${tenant.gender}" class="form-control">
-                    <option value="${tenant.gender}" selected="selected">${tenant.gender}</option>
+                <select name="gender" value="${tenant.gender}" class="form-control" required>
+                    <option value="${tenant.gender}" selected disabled hidden>${tenant.gender}</option>
                     <option value="Nam">Nam</option>
                     <option value="Nữ">Nữ</option>
                 </select>
             </div>
             <div class="form-wrapper">
                 <label>Số điện thoại</label>
-                <input type="text" class="form-control" name="numberPhone" value ="${tenant.numberPhone}">
+                <input type="text" class="form-control" name="numberPhone" value ="${tenant.numberPhone}" required pattern="[0-9]{10}"
+                       title="Số điện thoại chỉ gồm 10 chữ số, không chứa chữ cái và ký tự đặc biệt">
             </div>
             <div class="form-wrapper">
                 <label>Địa chỉ</label>
-                <input type="text" class="form-control" name="address" value="${tenant.address}">
+                <input type="text" class="form-control" name="address" value="${tenant.address}" required>
             </div>
             <button>Cập nhật</button>
         </form>

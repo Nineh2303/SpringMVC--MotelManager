@@ -61,11 +61,11 @@
         </div>
         <div class="form-wrapper">
             <label class="label-title">Giá</label>
-            <input type="text" class="form-control" path="price" name = "price" value="${service.price}"/>
+            <input type="number" class="form-control" path="price" name = "price" value="${service.price}" required/>
         </div>
         <div class="form-wrapper">
             <label class="label-title">Đơn vị tinh</label>
-            <input type="text" class="form-control" path="countIndex" name="countIndex" value="${service.countIndex}"/>
+            <input type="text" class="form-control" path="countIndex" name="countIndex" value="${service.countIndex}" required/>
         </div>
         <button>Thêm</button>
     </form>

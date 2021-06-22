@@ -69,7 +69,7 @@
             <div class="form-wrapper">
                 <label>CMND</label>
                 <input type="text" class="form-control" name="CMND" value="${tenant.CMND}"
-                       required maxlength="12">
+                       required maxlength="12" pattern="[0-9]{9,12}" title="*CMND là chuỗi gồm 9 -12 chữ số, không chứa chữ cái và ký tự đặc biệt ">
             </div>
         </div>
         <div class="form-group">
@@ -82,13 +82,14 @@
             </div>
             <div class="form-wrapper">
                 <label>Số Điện thoại </label>
-                <input type="text" class="form-control text" name="numberPhone" required/>
+                <input type="text" class="form-control text" name="numberPhone" required pattern="[0-9]{10}"
+                       title="Số điện thoại chỉ gồm 10 chữ số, không chứa chữ cái và ký tự đặc biệt"/>
             </div>
         </div>
         <div class="form-group">
             <div class="form-wrapper">
                 <label>Địa chỉ</label>
-                <input type="text" class="form-control text" name="address" require>
+                <input type="text" class="form-control text" name="address" required>
             </div>
             <div class="form-wrapper">
                 <label>Ngày nhận phòng</label>
@@ -98,8 +99,7 @@
         </div>
         <div class="form-wrapper">
             <label>Tiền đặt cọc</label>
-            <input type="text" class="form-control text"  name="price" value="${price}" readonly
-                   required/>
+            <input type="text" class="form-control text"  name="price" value=" ${price}" readonly required/>
         </div>
         <button>Thêm</button>
     </form>

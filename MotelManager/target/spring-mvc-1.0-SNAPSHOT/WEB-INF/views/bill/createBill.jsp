@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <div class="form-wrapper">
                         <label class="label-title"  >${service.name} (${service.countIndex})</label>
-                        <input type="number" class="form-control" name="${service.serviceId}" required/>
+                        <input type="number" class="form-control" name="${service.serviceId}" required min="0"/>
                     </div>
                     <div class="form-wrapper">
                         <label class="label-title" >Đơn giá</label>

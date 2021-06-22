@@ -22,6 +22,17 @@
             font-family: "JetBrains Mono", 'Bold';
             font-size: 30px;
         }
+        .success-message {
+            font-family: "JetBrains Mono", 'Bold';
+            font-size: 20px;
+            color: blue;
+        }
+
+        .fail-message {
+            font-family: "JetBrains Mono", 'Bold';
+            font-size: 20px;
+            color: red;
+        }
     </style>
 </head>
 <body class="archive post-type-archive post-type-archive-product woocommerce woocommerce-page">
@@ -29,8 +40,8 @@
     <div class="container">
         <%@include file="../../commons/header.jsp" %>
                    <h2 class="title"> Thông tin nhà trọ </h2>
-                    ${delete_message} <br/>
-                    ${update_message} <br/>
+                   <h3 class="success-message">${message}</h3>
+                   <h3 class="fail-message">${fmessage}</h3>
                     <a href="${pageContext.request.contextPath}/motel/insert.htm"><button class="button-big">Thêm </button></a><br/>
                     <table>
                         <tr>
@@ -50,7 +61,6 @@
                                 <th>
                                   <div class="button-group">
                                       <a href="${pageContext.request.contextPath}/motel/update/${m.homeId}.htm"><button class="button-small">Sửa </button></a>
-                                      <a href="${pageContext.request.contextPath}/motel/remove/${m.homeId}.htm"><button class="button-small">Xóa </button></a>
                                   </div></th>
                             </tr>
 

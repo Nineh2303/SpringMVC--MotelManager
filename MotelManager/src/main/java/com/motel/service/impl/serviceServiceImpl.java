@@ -51,6 +51,7 @@ public class serviceServiceImpl implements serviceService {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();
         try {
+            service.setStatus(1);
             session.save(service);
             t.commit();
             return true;

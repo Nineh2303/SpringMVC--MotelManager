@@ -33,6 +33,22 @@ public class RentDetailServiceImpl  implements RentDetailService {
     }
 
     @Override
+    public List<rentDetail> getRentDetailByStatus(int status) {
+        Session session = factory.openSession();
+        try {
+            String hql = "FROM rentDetail rent WHERE rent.status = :status";
+            Query query = session.createQuery(hql);
+            query.setParameter("status", status) ;
+            List<rentDetail> result = query.list();
+            if (result != null)
+                return result;
+        } catch (Exception e) {
+            System.out.println("Lỗi : " + e);
+        }
+        return null;
+    }
+
+    @Override
     public boolean insertDetail(rentDetail rent) {
         Session session = factory.openSession();
         Transaction t = session.beginTransaction();

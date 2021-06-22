@@ -41,18 +41,30 @@ public class RentDetailController {
     @Autowired
     RoomService roomService;
     @Autowired
-    HttpSession session ;
+    HttpSession session;
 
     @RequestMapping("index")
-    public String index(ModelMap model) {
-        Session session = factory.openSession();
-        String hql = "from rentDetail";
-        Query query = session.createQuery(hql);
-        List<rentDetail> list = query.list();
-        model.addAttribute("rent", list);
-        return "rent/index";
+    public String index(ModelMap model, HttpServletRequest request) {
+        int status;
+        try {
+            String stt = request.getParameter("status");
+            status = Integer.parseInt(stt);
+        } catch (Exception e) {
+            status = -1;
+        }
+        if (status == -1) {
+            Session session = factory.openSession();
+            String hql = "from rentDetail";
+            Query query = session.createQuery(hql);
+            List<rentDetail> list = query.list();
+            model.addAttribute("rent", list);
+            return "rent/index";
+        } else {
+            List<rentDetail> list = rentDetailService.getRentDetailByStatus(status) ;
+            model.addAttribute("rent", list);
+            return "rent/index";
+        }
     }
-
     @RequestMapping("/show/rent-id={rentId}")
     public String showDetail(ModelMap model, @PathVariable("rentId") String rentId) {
         Session session = factory.openSession();
@@ -97,6 +109,7 @@ public class RentDetailController {
         } else {
             Date checkOutDate = java.sql.Date.valueOf(LocalDate.parse(date));
             rent.setCheckOutDate(checkOutDate);
+            rent.setStatus(0);
             boolean updateRent = rentDetailService.updateRent(rent);
             if (!updateRent) {
                 model.addAttribute("rent", rent);
@@ -106,9 +119,9 @@ public class RentDetailController {
 
             boolean checkOutContract = contractService.checkOutForContract(rent, checkOutDate);
             boolean checkOutTenant = tenantService.checkOutForTenant(rent);
-            Room room =(Room) session.get(Room.class ,  rent.getContract().getRoomId()) ;
+            Room room = (Room) session.get(Room.class, rent.getContract().getRoomId());
             session.close();
-            boolean roomStatus= roomService.updateStatusRoom(room);
+            boolean roomStatus = roomService.updateStatusRoom(room);
 
             if (checkOutTenant && checkOutContract && roomStatus) {
 
